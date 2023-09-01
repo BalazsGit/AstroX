@@ -107,6 +107,32 @@ public class CallbackFunctions {
         timer.start();
     }
 
+    public void ScreenCheck() {
+        // Get the default graphics environment
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+
+        // Get an array of all available screen devices
+        GraphicsDevice[] screens = ge.getScreenDevices();
+
+        // Get the frame or window for which you want to check the screen
+        //Frame yourFrame = new Frame("Your Frame"); // Replace this with your frame instance
+
+        // Get the bounds of your frame
+        Rectangle frameBounds = astro.mainFrame.getBounds();
+
+        // Iterate through each screen to check if your frame is on it
+        for (int i = 0; i < screens.length; i++) {
+            Rectangle screenBounds = screens[i].getDefaultConfiguration().getBounds();
+
+            if (screenBounds.contains(frameBounds)) {
+                System.out.println("Your frame is on Screen " + i);
+                break; // You can break out of the loop once you find the screen
+            }
+        }
+    }
+
+
+
     public void toggleFullscreen() {
 
         if (isFullScreen) {
