@@ -1,5 +1,6 @@
 package astrox.mainframe;
 
+import astrox.Main;
 import astrox.config.PropertyService;
 import me.friwi.jcefmaven.CefAppBuilder;
 import org.cef.CefApp;
@@ -18,6 +19,7 @@ import java.awt.dnd.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class MainFrame {
@@ -175,7 +177,12 @@ public class MainFrame {
     private boolean lockZoneLeftDown = false;
     private boolean lockZoneRightUp = false;
     private boolean lockZoneRightDown = false;
-
+    private Color backgroundColor;
+    private int alpha = 1;
+    private int red = 0;
+    private int green = 0;
+    private int blue = 0;
+    public String htmlResourcePath = "/webGUI/index.html";
     private boolean isInHorizontalResizeZoneLeft(MouseEvent e) {
         return e.getX() <= resizeZoneWidth;
     }
@@ -345,51 +352,14 @@ public class MainFrame {
 
         mainFrame.setUndecorated(true);
 
-        mainFrame.setBackground(Color.BLACK);
-/*
-        // Add a mouse listener to handle resizing
-        MouseAdapter mouseAdapter = new MouseAdapter() {
-            private Point initialClick;
-            private boolean resizing = false;
+        Color backgroundColor = new Color(red, green, blue, alpha);
 
-            @Override
-            public void mousePressed(MouseEvent e) {
-                initialClick = e.getPoint();
-                resizing = isResizingZone(e);
-            }
-
-            @Override
-            public void mouseDragged(MouseEvent e) {
-                if (resizing) {
-                    Point currentPoint = e.getLocationOnScreen();
-                    int deltaX = currentPoint.x - initialClick.x;
-                    int deltaY = currentPoint.y - initialClick.y;
-                    frame.setSize(frame.getWidth() + deltaX, frame.getHeight() + deltaY);
-                    initialClick = currentPoint;
-                }
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                resizing = false;
-            }
-
-            private boolean isResizingZone(MouseEvent e) {
-                int borderSize = 8; // Size of the resizing border
-                return e.getX() > frame.getWidth() - borderSize || e.getY() > frame.getHeight() - borderSize;
-            }
-        };
-
-        this.addMouseListener(mouseAdapter);
-        this.addMouseMotionListener(mouseAdapter);
-*/
-
-
-
-        JPanel contentPane = new JPanel();
-        mainFrame.setContentPane(contentPane);
+        mainFrame.setBackground(backgroundColor);
+        //mainFrame.setBackground(Color.BLACK);
 
         mainFrame.setVisible(true);
+
+
 
 
     // Custom resizable border
@@ -397,14 +367,6 @@ public class MainFrame {
         //this.setTitle(title);
         //setLayout(new BorderLayout());
 
-        mainPanel = new JPanel();
-        //mainPanel.setLayout(new BorderLayout());
-        mainPanel.setSize(800, 600);
-        mainPanel.setBackground(Color.GRAY);
-        //mainPanel.setVisible(true);
-
-        mainFrame.add(mainPanel);
-        mainFrame.setVisible(true);
 /*
         JLabel label = new JLabel("Hello, World!");
         label.setForeground(Color.WHITE);

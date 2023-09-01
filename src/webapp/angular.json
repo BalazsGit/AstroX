@@ -18,7 +18,7 @@
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "baseHref": "./",
-            "outputPath": "../main/resources/webGUI",
+            "outputPath": "../../target/webGUI",
             "indexTransform":"index-html-transform.js",
             "index": "src/index.html",
             "main": "src/main.ts",
