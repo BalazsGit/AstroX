@@ -54,13 +54,25 @@ public class CallbackFunctions {
     private Timer timer;
     private long startTime = 100;
     private int animationDuration = 1000; // Duration of the animation in milliseconds
-    private int animationStep = 20; // Time interval for animation updates
+    private int animationDelay = 20; // Time interval for animation updates
+    private int animationSteps;
+    private int animationStepCounter = 0;
     private int initialWidth = 800; // Initial window width
     private int initialHeight = 600; // Initial window height
     private int targetWidth;
     private int targetHeight;
     private int currentWidth = initialWidth;
     private int currentHeight = initialHeight;
+    private int originalDeltaXLeft;
+    private int originalDeltaXRight;
+    private int originalDeltaYUp;
+    private int originalDeltaYDown;
+    private int deltaXLeftStep;
+    private int deltaXRightStep;
+    private int deltaYUpStep;
+    private int deltaYDownStep;
+    
+    
 
     public void FullScreenAnimation() {
 
@@ -70,17 +82,63 @@ public class CallbackFunctions {
         targetWidth = Toolkit.getDefaultToolkit().getScreenSize().width; // Full-screen width
         targetHeight = Toolkit.getDefaultToolkit().getScreenSize().height; // Full-screen height
 
-        timer = new Timer(animationStep, new ActionListener() {
+        System.out.println("Target Width: " + targetWidth);
+        System.out.println("Target Height: " + targetHeight);
+
+        originalDeltaXLeft = originalLocation.x;
+        originalDeltaXRight = targetWidth - (originalLocation.x + originalSize.width);
+
+        originalDeltaYUp = originalLocation.y;
+        originalDeltaYDown = targetHeight - (originalLocation.y + originalSize.height);
+
+        System.out.println("originalDeltaXLeft: " + originalDeltaXLeft);
+        System.out.println("originalDeltaXRight: " + originalDeltaXRight);
+
+        System.out.println("originalDeltaYUp: " + originalDeltaYUp);
+        System.out.println("originalDeltaYDown: " + originalDeltaYDown);
+
+        animationStepCounter = 0;
+
+        animationSteps = animationDuration / animationDelay;
+
+        deltaXLeftStep = originalDeltaXLeft / animationSteps;
+        deltaXRightStep = originalDeltaXRight / animationSteps;
+
+        deltaYUpStep = originalDeltaYUp / animationSteps;
+        deltaYDownStep = originalDeltaYDown / animationSteps;
+
+        System.out.println("deltaXLeftStep: " + deltaXLeftStep);
+        System.out.println("deltaXRightStep: " + deltaXRightStep);
+
+        System.out.println("deltaYUpStep: " + deltaYUpStep);
+        System.out.println("deltaYDownStep: " + deltaYDownStep);
+
+        timer = new Timer(animationDelay, new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (startTime == 0) {
-                    startTime = System.currentTimeMillis();
-                }
 
-                long currentTime = System.currentTimeMillis();
-                long elapsedTime = currentTime - startTime;
+            if (animationStepCounter <= animationSteps) {
+                int actXLocation = originalLocation.x - animationStepCounter * deltaXLeftStep;
+                int actYLocation = originalLocation.y - animationStepCounter * deltaYUpStep;
+                int actWidth = originalSize.width + animationStepCounter * deltaXLeftStep + animationStepCounter * deltaXRightStep;
+                int actHeight = originalSize.height + animationStepCounter * deltaYUpStep + animationStepCounter * deltaYDownStep;
+                astro.mainFrame.setBounds(actXLocation, actYLocation, actWidth, actHeight);
+                animationStepCounter++;
+                System.out.println("X: " + actXLocation);
+                System.out.println("Y: " + actYLocation);
+                System.out.println("Width: " + actWidth);
+                System.out.println("Height: " + actHeight);
+            }
+            else {
+                timer.stop();
+                astro.mainFrame.setBounds(0,0, targetWidth, targetHeight);
+                astro.mainFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            }
+            astro.mainFrame.revalidate();
+            astro.mainFrame.repaint();
 
+/*
                 if (elapsedTime >= animationDuration) {
                     // Animation complete
                     timer.stop();
@@ -98,7 +156,10 @@ public class CallbackFunctions {
                     int x = (targetWidth - newWidth) / 2;
                     int y = (targetHeight - newHeight) / 2;
                     astro.mainFrame.setLocation(x, y);
+
+
                 }
+*/
             }
         });
     }
@@ -114,9 +175,6 @@ public class CallbackFunctions {
         // Get an array of all available screen devices
         GraphicsDevice[] screens = ge.getScreenDevices();
 
-        // Get the frame or window for which you want to check the screen
-        //Frame yourFrame = new Frame("Your Frame"); // Replace this with your frame instance
-
         // Get the bounds of your frame
         Rectangle frameBounds = astro.mainFrame.getBounds();
 
@@ -131,8 +189,6 @@ public class CallbackFunctions {
         }
     }
 
-
-
     public void toggleFullscreen() {
 
         if (isFullScreen) {
@@ -144,6 +200,9 @@ public class CallbackFunctions {
         } else {
             // Enter full-screen mode
             originalSize = astro.mainFrame.getSize();
+            originalLocation = astro.mainFrame.getLocation();
+            FullScreenAnimation();
+            startAnimation();
             GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
             if (device.isFullScreenSupported()) {
                 device.setFullScreenWindow(astro.mainFrame);
@@ -152,5 +211,13 @@ public class CallbackFunctions {
                 System.err.println("Full-screen mode not supported.");
             }
         }
+    }
+
+    public void resizeBrowserPanel(int width, int height, int left, int right, int top, int bottom) {
+
+        astro.browserPanel.setBounds(left, top, width, height);
+        //System.out.println("resizeBrowserPanel left: " + left + "top" + top);
+        astro.browserPanel.revalidate();
+        astro.browserPanel.repaint();
     }
 }

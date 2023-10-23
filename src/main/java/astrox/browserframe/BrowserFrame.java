@@ -7,11 +7,15 @@ import org.cef.CefClient;
 import org.cef.browser.CefBrowser;
 import org.cef.browser.CefFrame;
 import org.cef.browser.CefMessageRouter;
+import org.cef.browser.CefRequestContext;
 import org.cef.callback.CefQueryCallback;
 import org.cef.handler.CefMessageRouterHandlerAdapter;
 import astrox.callbackfunctions.CallbackFunctions;
+import org.cef.handler.CefRequestContextHandlerAdapter;
+import org.json.JSONObject;
 
 import java.awt.*;
+import java.util.Map;
 
 public class BrowserFrame {
 
@@ -86,6 +90,25 @@ public class BrowserFrame {
             //urlField.setText(browserFrameURL);
             cefBrowser = cefClient.createBrowser(browserFrameURL, astro.useOSR, astro.isTransparent);
         }
+/*
+        class CustomRequestContextHandler extends CefRequestContextHandlerAdapter {
+            @Override
+            public void onRequestContextInitialized(CefBrowser browser) {
+                // Set the X-Frame-Options header for the RequestContext
+                setXFrameOptions(browser, "DENY");
+            }
+        }
+
+        // Get the global request context
+        CefRequestContextHandlerAdapter requestContextHandler = new CustomRequestContextHandler(null);
+        CefRequestContext globalRequestContext = CefRequestContext.createContext(requestContextHandler);
+
+        // Set the X-Frame-Options header for the global request context
+        requestContextHandler.setXFrameOptions("DENY");
+
+        // Assign the global request context to the browser
+        cefBrowser.setRequestContext(globalRequestContext);
+*/
         browserUI = cefBrowser.getUIComponent();
 
         // Handle the query from CEF message router
@@ -121,6 +144,39 @@ public class BrowserFrame {
                     // Send a response back to the CEF browser
                     //cefMessageRouter.sendQueryResponse(queryId, javaResponse);
                     return true;
+                }
+                if (request.contains("resizeBrowserPanel")) {
+
+                    String prefix = "resizeBrowserPanel?";
+
+                    request = request.substring(prefix.length());
+
+                    JSONObject params = new JSONObject(request);
+
+                    // Check if the JSON object contains the "width" and "height" fields
+                    if (!params.isEmpty()) {
+                        int width = params.getInt("width");
+                        int height = params.getInt("height");
+                        int left = params.getInt("left");
+                        int right = params.getInt("right");
+                        int top = params.getInt("top");
+                        int bottom = params.getInt("bottom");
+
+                        callbackFunctions.resizeBrowserPanel(width, height, left, right, top, bottom);
+
+                        // Now you have the width and height as integers, use them as needed
+                        System.out.println("Received width: " + width + ", height: " + height);
+
+                    }
+                    else {
+                        //no parameters
+                    }
+
+                        callback.success(null);
+                        //System.out.println("Function called in java side");
+                        // Send a response back to the CEF browser
+                        //cefMessageRouter.sendQueryResponse(queryId, javaResponse);
+                        return true;
                 }
                 return false;
             }

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "webGUI": {
+    "ngGUI": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -18,8 +18,8 @@
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "baseHref": "./",
-            "outputPath": "../../target/webGUI",
-            "indexTransform":"index-html-transform.js",
+            "outputPath": "../../target/ngGUI",
+            "indexTransform": "index-html-transform.js",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -39,8 +39,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -48,6 +48,20 @@
                   "maximumError": "4kb"
                 }
               ],
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                },
+                "fonts": true
+              },
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -71,10 +85,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "webGUI:build:production"
+              "browserTarget": "ngGUI:build:production"
             },
             "development": {
-              "browserTarget": "webGUI:build:development"
+              "browserTarget": "ngGUI:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +96,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "webGUI:build"
+            "browserTarget": "ngGUI:build"
           }
         },
         "test": {

@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\main",
+    "\\src\\main\\java",
+    "\\src\\main\\java\\astrox",
+    "\\src\\main\\java\\astrox\\webserver",
+    "\\src\\main\\resources",
+    "\\src\\ngapp",
+    "\\src\\ngapp\\src",
+    "\\src\\ngapp\\src\\app",
+    "\\src\\ngapp\\src\\app\\mainpage"
+  ],
+  "SelectedNode": "\\src\\ngapp\\src\\app\\mainpage\\mainpage.component.html",
+  "PreviewInSolutionExplorer": false
+}

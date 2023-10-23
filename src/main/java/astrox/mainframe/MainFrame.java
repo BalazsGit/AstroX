@@ -24,8 +24,10 @@ import java.util.Properties;
 
 public class MainFrame {
 
-    public JFrame mainFrame;
-    public JPanel mainPanel;
+    public Frame mainFrame;
+    public Panel browserPanel;
+    public Panel ngGUIPanel;
+    public JLayeredPane layeredPane;
     //public JTextField urlField;
     public JButton start_scavenger;
     public JButton start_turboplotter;
@@ -42,7 +44,6 @@ public class MainFrame {
     private JPanel topPanel;
     private JPanel centerPanel;
     private JTabbedPane tabbedPane;
-    private JPanel browserPanel;
     private JPanel applicationsPanel;
     private JPanel textEditorPanel;
     private JPanel settingsPanel;
@@ -182,7 +183,7 @@ public class MainFrame {
     private int red = 0;
     private int green = 0;
     private int blue = 0;
-    public String htmlResourcePath = "/webGUI/index.html";
+    public String htmlResourcePath = "/ngGUI/index.html";
     private boolean isInHorizontalResizeZoneLeft(MouseEvent e) {
         return e.getX() <= resizeZoneWidth;
     }
@@ -346,16 +347,52 @@ public class MainFrame {
             }
         });
 
+        //mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         mainFrame.setSize(800, 600);
 
         mainFrame.setLocationRelativeTo(null);
 
-        mainFrame.setUndecorated(true);
+        //No OS decorations used keep this line!!!
+        //Color backgroundColor = new Color(red, green, blue, alpha);
+        //mainFrame.setUndecorated(true);
+        //mainFrame.setBackground(backgroundColor);
 
-        Color backgroundColor = new Color(red, green, blue, alpha);
+        //mainFrame.setBackground(Color.BLUE);
 
-        mainFrame.setBackground(backgroundColor);
-        //mainFrame.setBackground(Color.BLACK);
+        mainFrame.setLayout(new BorderLayout());
+
+        //layeredPane = new JLayeredPane();
+        //layeredPane.setBounds(0,0,500,500);
+
+        ngGUIPanel = new Panel();
+        ngGUIPanel.setLayout(new BorderLayout()); //JCEF shows up only if set Layout
+        //ngGUIPanel.setBounds(30,30,500,500);
+        //ngGUIPanel.setBackground(Color.GREEN);
+        ngGUIPanel.setVisible(true);
+
+        browserPanel = new Panel();
+        browserPanel.setLayout(new BorderLayout()); //JCEF shows up only if set Layout
+        //browserPanel.setBounds(20,20,200,200);
+        //browserPanel.setBackground(Color.BLACK);
+        browserPanel.setVisible(true);
+
+        mainFrame.add(browserPanel);
+        mainFrame.add(ngGUIPanel);
+
+
+
+        //mainFrame.add(layeredPane);
+
+        // Add other components with specific layers
+        //layeredPane.add(ngGUIPanel, JLayeredPane.DEFAULT_LAYER); // Default layer
+        //layeredPane.add(browserPanel, JLayeredPane.PALETTE_LAYER); // Above default layer
+
+        //layeredPane.setVisible(true);
+
+
+        //mainFrame.setComponentZOrder(ngGUIPanel, 1); // panel2 will be drawn below panel1
+        //mainFrame.setComponentZOrder(browserPanel, 0); // panel3 will be drawn above panel2
 
         mainFrame.setVisible(true);
 

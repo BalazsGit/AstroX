@@ -1,0 +1,101 @@
+
+<!-- Angular component's template -->
+<!--
+<div style="height:300px">
+  <button (click)="callJavaFunction()" type="submit">Call Java Function</button><br>
+  <button (click)="closeWindow()" type="submit">Close Window</button><br>
+  <button (click)="toggleFullscreen()" type="submit">Toggle Full Screen</button>
+
+  <div>Response: {{ responseMessage }}</div>
+</div>
+  -->
+<!--
+<div style="height:500px">
+  <ng-container *ngIf="true">
+    <mat-toolbar class="example-header">Header</mat-toolbar>
+
+    <mat-sidenav-container class="example-container">
+      <mat-sidenav #sidenav mode="side" opened class="example-sidenav"
+                   [fixedInViewport]="options.value.fixed" [fixedTopGap]="options.value.top"
+                   [fixedBottomGap]="options.value.bottom">
+        {{options.value.fixed ? 'Fixed' : 'Non-fixed'}} Sidenav
+      </mat-sidenav>
+
+      <mat-sidenav-content [formGroup]="options">
+        <p><mat-checkbox formControlName="fixed">Fixed</mat-checkbox></p>
+        <p>
+          <mat-form-field>
+            <mat-label>Top gap</mat-label>
+            <input matInput type="number" formControlName="top">
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <mat-label>Bottom gap</mat-label>
+            <input matInput type="number" formControlName="bottom">
+          </mat-form-field>
+        </p>
+        <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+        <p>mainpage works!</p>
+        <div style="height:300px">
+          <button (click)="callJavaFunction()" type="submit">Call Java Function</button><br>
+          <button (click)="closeWindow()" type="submit">Close Window</button><br>
+          <button (click)="toggleFullscreen()" type="submit">Toggle Full Screen</button>
+
+          <div>Response: {{ responseMessage }}</div>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+
+    <mat-toolbar class="example-footer">Footer</mat-toolbar>
+  </ng-container>
+</div>
+-->
+<!-- app.component.html -->
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav style="background-color: blue; width: 500px; height: 500px;" (keydown.escape)="close('escape')" mode="side" opened>
+    <p><button mat-button (click)="close('toggle button')">Browser</button></p>
+    <p><button mat-button (click)="close('toggle button')">Launcher</button></p>
+    <p><button mat-button (click)="close('toggle button')">Text Editor</button></p>
+    <p><button mat-button (click)="close('toggle button')">Database Editor</button></p>
+  </mat-sidenav>
+
+  <mat-sidenav-content style="background-color: yellow;">
+    <div>
+      <button (click)="callJavaFunction()" type="submit">Call Java Function</button><br>
+      <button (click)="closeWindow()" type="submit">Close Window</button><br>
+      <button (click)="toggleFullscreen()" type="submit">Toggle Full Screen</button>
+      <div>Response: {{ responseMessage }}</div>
+    </div>
+    <mat-toolbar>
+      <button mat-button (click)="sidenav.toggle()">toggle</button>
+    </mat-toolbar>
+    <div style="height: 20vh; width: 200px; background-color: blue;"></div>
+    <div #browserContainer style="
+            width: 100%;
+            height: 100px;
+            background-color: green; "
+         appResize
+         (resize)="onResize($event)"
+         (mutation)="onMutation($event)"
+         (intersection)="onIntersection($event)">
+    </div>
+    <br>
+    <br>
+
+    <div>
+      <!-- Second iframe -->
+      <iframe [src]="iframe2Src" #iframe2 width="100%"></iframe>
+      <input type="text" [(ngModel)]="iframe2Src" placeholder="Enter URL" />
+      <button (click)="loadPage2()">Load Page2</button>
+      <!--
+    <button (click)="loadPage(iframe2Src, iframe2)">Load Page</button>
+    <button (click)="navigateForward(iframe2)">Forward</button>
+    <button (click)="navigateBackward(iframe2)">Backward</button>
+    -->
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
