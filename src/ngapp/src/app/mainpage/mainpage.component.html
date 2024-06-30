@@ -71,6 +71,10 @@
     <mat-toolbar>
       <button mat-button (click)="sidenav.toggle()">toggle</button>
     </mat-toolbar>
+
+    <textarea style="overflow:hidden">
+    </textarea>
+
     <div style="height: 20vh; width: 200px; background-color: blue;"></div>
     <div #browserContainer style="
             width: 100%;
@@ -79,8 +83,16 @@
          appResize
          (resize)="onResize($event)"
          (mutation)="onMutation($event)"
-         (intersection)="onIntersection($event)">
+         (intersection)="onIntersection($event)"
+         >
     </div>
+    <!--removed from browserContainer
+         appResize
+         (resize)="onResize($event)"
+         (mutation)="onMutation($event)"
+         (intersection)="onIntersection($event)"
+    -->
+
     <br>
     <br>
 

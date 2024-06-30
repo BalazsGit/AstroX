@@ -4,105 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b581f2-a035-4f18-a063-3be6cda78062" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/AstroX/FileContentIndex/156484f4-997a-4e93-a9c6-a9ac16e10a4b.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/AstroX/FileContentIndex/a0bd128a-6971-47e4-a977-859f293a3f1c.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/AstroX/FileContentIndex/ac140f5b-0ee9-4715-acea-6791f95f71aa.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/AstroX/FileContentIndex/b705a9fd-13a4-4dab-b905-c5496bd9d65b.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/AstroX/FileContentIndex/bb890fdb-6537-4d11-9d9a-b7d3f99d7028.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/AstroX/config/applicationhost.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/AstroX/v17/.wsuo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/ProjectSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/slnx.sqlite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/astrox/config/Prop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/astrox/config/PropertyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/astrox/config/PropertyServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/astrox/config/Props.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/astrox/init/InitClose.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/astrox/init/InitFiles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/astrox/init/InitTabbedBrowserPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/astrox/init/InitUIManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/astrox/util/FlatTabbedPaneAddIcon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/astrox/util/HorizontalMirrorLabel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/astrox/util/Reload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/astrox/util/RotateLabel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/astrox/util/VerticalMirrorLabel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/astrox/webserver/WebServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webGUI/3rdpartylicenses.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webGUI/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webGUI/main.40a4ec3e91a20c43.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webGUI/polyfills.ae49cb746a26af3c.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webGUI/runtime.4a21f66d2bd421ea.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webGUI/styles.ef46db3751d8e999.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/.vs/ProjectSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/.vs/VSWorkspaceState.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/.vs/slnx.sqlite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/.vs/webapp/FileContentIndex/c8a70b1a-ed22-4507-ac77-4d5ce6b3f57f.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/.vs/webapp/config/applicationhost.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/.vs/webapp/v17/.wsuo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/angular.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/index-html-transform.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/karma.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/app/app-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/app/app.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/app/app.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/app/app.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/app/app.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/app/app.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/app/browserpage/browserpage.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/app/browserpage/browserpage.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/app/browserpage/browserpage.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/app/mainpage/mainpage.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/app/mainpage/mainpage.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/app/mainpage/mainpage.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/app/resize.directive.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/assets/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/environments/environment.prod.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/environments/environment.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/polyfills.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/src/test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/tsconfig.app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ngapp/tsconfig.spec.json" afterDir="false" />
+    <list default="true" id="66b581f2-a035-4f18-a063-3be6cda78062" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/astrox/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/astrox/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/astrox/browserframe/BrowserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/astrox/browserframe/BrowserFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/astrox/callbackfunctions/CallbackFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/astrox/callbackfunctions/CallbackFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/astrox/mainframe/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/astrox/mainframe/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/index-html-transform.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/src/app/app-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/src/app/app.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/src/app/mainpage/mainpage.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/src/app/mainpage/mainpage.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/src/app/mainpage/mainpage.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ngapp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/ngapp/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ngapp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/ngapp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ngapp/src/app/mainpage/mainpage.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/ngapp/src/app/mainpage/mainpage.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ngapp/src/app/mainpage/mainpage.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ngapp/src/app/mainpage/mainpage.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ngapp/src/app/resize.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ngapp/src/app/resize.directive.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,12 +25,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "BalazsGit"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;BalazsGit&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -138,25 +51,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Github/balazsgit/babel-pool-poc+&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Github/balazsgit/AstroX",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Github\balazsgit\AstroX" />
       <recent name="D:\Github\balazsgit\AstroX\src\webapp\src\app" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="callbackfunctions" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -199,7 +138,15 @@
       <option name="presentableId" value="Default" />
       <updated>1693861444047</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update">
+      <option name="closed" value="true" />
+      <created>1698054876049</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698054876049</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,6 +166,7 @@
     <MESSAGE value="Animation to toggleFullScreen" />
     <MESSAGE value="Animation to toggleFullScreen 1" />
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>

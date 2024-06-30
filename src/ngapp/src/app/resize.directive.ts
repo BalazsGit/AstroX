@@ -8,31 +8,37 @@ export class ResizeDirective implements AfterViewInit, OnDestroy {
   @Output() resize: EventEmitter<DOMRect> = new EventEmitter<DOMRect>();
   @Output() intersection: EventEmitter<DOMRect> = new EventEmitter<DOMRect>();
   @Output() mutation: EventEmitter<DOMRect> = new EventEmitter<DOMRect>();
+
   private resizeObserver!: ResizeObserver; // Use definite assignment assertion
   private mutationObserver!: MutationObserver;
   private intersectionObserver!: IntersectionObserver;
+
 
   constructor(private el: ElementRef) {}
 
   ngAfterViewInit(): void {
     this.resizeObserver = new ResizeObserver((entries) => {
+      //replaced with boundingClientRectObserver
+      return
       //const rect: DOMRect = entries[0].contentRect;
       const rect = this.el.nativeElement.getBoundingClientRect();
-      console.log('Resize_');
+      //console.log('Resize_');
       this.resize.emit(rect);
     });
 
-
     this.mutationObserver = new MutationObserver((entries) => {
-      // Handle mutations, e.g., position changes
+      //replaced with boundingClientRectObserver
+      return
       const rect = this.el.nativeElement.getBoundingClientRect();
-      console.log('Mutations_');
+      //console.log('Mutations_');
       this.mutation.emit(rect);
     });
 
 
 // Set up the Intersection Observer
     this.intersectionObserver = new IntersectionObserver((entries) => {
+      //replaced with boundingClientRectObserver
+      return
       const rect = this.el.nativeElement.getBoundingClientRect();
       console.log('Intersection_');
       this.intersection.emit(rect);
@@ -40,7 +46,7 @@ export class ResizeDirective implements AfterViewInit, OnDestroy {
       //});
     });
 
-    
+
     // Observe changes in the size of the element
     this.resizeObserver.observe(this.el.nativeElement);
 
@@ -62,11 +68,11 @@ export class ResizeDirective implements AfterViewInit, OnDestroy {
     if (this.resizeObserver) {
       this.resizeObserver.disconnect();
     }
-    
+
     if (this.mutationObserver) {
       this.mutationObserver.disconnect();
     }
-    
+
     if (this.intersectionObserver) {
       this.intersectionObserver.disconnect();
     }
